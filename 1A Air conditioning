@@ -1,0 +1,13 @@
+def conder(t_room, t_cond, mode):
+    if mode == "fan" or (mode == "freeze" and int(t_cond) > int(t_room)) or (mode == "heat" and int(t_room) > int(t_cond)):
+        return t_room
+    else:
+        return t_cond
+
+
+reader = open('input.txt', 'r')
+t_room, t_cond, mode = reader.read().split()
+reader.close()
+writer = open('output.txt', 'w')
+writer.write(conder(t_room, t_cond, mode))
+writer.close()
