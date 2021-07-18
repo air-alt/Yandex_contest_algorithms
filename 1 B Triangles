@@ -1,0 +1,11 @@
+def triangles(a, b, c):
+	if a < b +c and b < a + c and c < a + b:
+		return "YES"
+	else:
+		return "NO"
+
+reader = open('input.txt', 'r')
+a, b, c = reader.read().split()
+writer = open('output.txt', 'w')
+writer.write(str(triangles(int(a), int(b), int(c))))
+writer.close()
